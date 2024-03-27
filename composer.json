@@ -1,0 +1,33 @@
+{
+    "name": "yurizoom/moonshine-scheduling",
+    "type": "library",
+    "description": "Task scheduling extension for for moonshine",
+    "keywords": ["moonshine", "task", "scheduling"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "yurizoom",
+            "homepage": "https://github.com/yurizoom",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "moonshine/moonshine": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "MoonShine\\LogViewer\\": "src/"
+        }
+    },
+    "conflict": {
+        "moonshine/moonshine": "<2.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MoonShine\\Scheduling\\SchedulingServiceProvider"
+            ]
+        }
+    }
+}
