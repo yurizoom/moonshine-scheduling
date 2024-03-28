@@ -1,7 +1,7 @@
 {
     "name": "yurizoom/moonshine-scheduling",
     "type": "library",
-    "description": "Task scheduling extension for for moonshine",
+    "description": "Task scheduling extension for moonshine",
     "keywords": ["moonshine", "task", "scheduling"],
     "license": "MIT",
     "authors": [
