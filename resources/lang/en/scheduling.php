@@ -8,4 +8,6 @@ return [
     'run' => 'Run',
     'run_action' => 'Run',
     'output' => 'Output',
+    'success' => 'Success',
+    'failed' => 'Failed',
 ];

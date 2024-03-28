@@ -4,10 +4,9 @@ use Illuminate\Support\Facades\Route;
 use MoonShine\Scheduling\Controllers\SchedulingController;
 
 Route::group([
-    'prefix' => 'moonshine',
+    'prefix' => config('moonshine.route.prefix'),
     'as' => 'moonshine.',
-    //'middleware' => config('moonshine.auth.middleware'),
+    'middleware' => [config('moonshine.auth.middleware'), 'web'],
 ], function () {
-    Route::get('scheduling', [SchedulingController::class, 'index'])->name('scheduling.index');
     Route::post('scheduling/run', [SchedulingController::class, 'runEvent'])->name('scheduling.run');
 });

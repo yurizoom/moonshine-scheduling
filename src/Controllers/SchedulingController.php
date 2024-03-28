@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MoonShine\Scheduling\Controllers;
 
 use MoonShine\Http\Controllers\MoonShineController;
@@ -8,26 +10,22 @@ use MoonShine\Scheduling\Scheduling;
 
 class SchedulingController extends MoonShineController
 {
-    public function index(MoonShineRequest $request)
-    {
-    }
-
     public function runEvent(MoonShineRequest $request): array
     {
         $scheduling = new Scheduling();
 
         try {
-            $output = $scheduling->runTask($request->get('id'));
+            $output = $scheduling->runTask((int) $request->get('id'));
 
             return [
                 'status'    => true,
-                'message'   => 'success',
+                'message'   => __('moonshine-scheduling::scheduling.success'),
                 'data'      => $output,
             ];
         } catch (\Exception|\Throwable $e) {
             return [
                 'status'    => false,
-                'message'   => 'failed',
+                'message'   => __('moonshine-scheduling::scheduling.failed'),
                 'data'      => $e->getMessage(),
             ];
         }

@@ -1,11 +1,11 @@
 Scheduling task manager for MoonShine
 ============================
 
-!!! В РАЗРАБОТКЕ !!!
-
 Веб-интерфейс для управления планировщиком задач в Laravel.
 
 ## Скриншот
+
+![wx20170809-165644](https://raw.githubusercontent.com/yurizoom/moonshine-scheduling/main/blob/screenshot.jpg)
 
 ## Установка
 
@@ -15,19 +15,15 @@ $ composer require yurizoom/moonshine-scheduling
 
 ## Настройка
 
-### Путь до директории с логами
+В файле config/moonshine.php добавьте конфигурации.
 
-Для изменения пути до директории с логами добавьте в файл config/moonshine.php:
 ```php
-return [
-    ...
-    
-    'log_viewer' => [
-        'path' => storage_path('logs'),
-    ],
-    
-    ...
-]  
+[
+    'scheduling' => [
+        // Автоматическое добавление в меню
+        'auto_menu' => true,
+    ]
+]
 ```
 
 Лицензия

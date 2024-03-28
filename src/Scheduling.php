@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MoonShine\Scheduling;
 
 use Illuminate\Console\Scheduling\CallbackEvent;
@@ -123,7 +125,7 @@ class Scheduling
      */
     protected function getOutputTo(): string
     {
-        if (!$this->sendOutputTo) {
+        if (!isset($this->sendOutputTo)) {
             $this->sendOutputTo = storage_path('app/task-schedule.output');
         }
 
