@@ -26,6 +26,27 @@ $ composer require yurizoom/moonshine-scheduling
 ]
 ```
 
+### Добавление в меню
+
+Для того чтобы добавить меню в другое место, вставьте следующий код в app/Providers/MoonShineServiceProvider.php:
+```php
+use MoonShine\Scheduling\Pages\SchedulingPage;
+
+protected function menu(): array
+    {
+        return [
+            ...
+            
+            MenuItem::make(
+                static fn () => __('Scheduling'),
+                new SchedulingPage(),
+            ),
+            
+            ...
+        ];
+    }
+```
+
 Лицензия
 ------------
 [The MIT License (MIT)](LICENSE).
