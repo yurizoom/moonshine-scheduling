@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MoonShine\Scheduling;
+namespace YuriZoom\MoonShineScheduling;
 
 use Illuminate\Console\Scheduling\CallbackEvent;
 use Illuminate\Console\Scheduling\Event;
@@ -20,7 +20,6 @@ class Scheduling
     /**
      * Get all events in console kernel.
      *
-     * @return array
      * @throws BindingResolutionException
      */
     protected function getKernelEvents(): array
@@ -34,8 +33,6 @@ class Scheduling
      * Get all formatted tasks.
      *
      * @throws \Exception
-     *
-     * @return array
      */
     public function getTasks(): array
     {
@@ -43,11 +40,11 @@ class Scheduling
 
         foreach ($this->getKernelEvents() as $event) {
             $tasks[] = [
-                'task'          => $this->formatTask($event),
-                'expression'    => $event->expression,
-                'nextRunDate'   => $event->nextRunDate()->format('Y-m-d H:i:s'),
-                'description'   => $event->description,
-                'readable'      => CronSchedule::fromCronString($event->expression)->asNaturalLanguage(),
+                'task' => $this->formatTask($event),
+                'expression' => $event->expression,
+                'nextRunDate' => $event->nextRunDate()->format('Y-m-d H:i:s'),
+                'description' => $event->description,
+                'readable' => CronSchedule::fromCronString($event->expression)->asNaturalLanguage(),
             ];
         }
 
@@ -56,10 +53,6 @@ class Scheduling
 
     /**
      * Format a giving task.
-     *
-     * @param $event
-     *
-     * @return array
      */
     protected function formatTask($event): array
     {
@@ -97,9 +90,7 @@ class Scheduling
     /**
      * Run specific task.
      *
-     * @param int $id
      *
-     * @return string
      * @throws Throwable
      */
     public function runTask(int $id): string
@@ -120,12 +111,9 @@ class Scheduling
         return $this->readOutput();
     }
 
-    /**
-     * @return string
-     */
     protected function getOutputTo(): string
     {
-        if (!isset($this->sendOutputTo)) {
+        if (! isset($this->sendOutputTo)) {
             $this->sendOutputTo = storage_path('app/task-schedule.output');
         }
 
@@ -134,8 +122,6 @@ class Scheduling
 
     /**
      * Read output info from output file.
-     *
-     * @return string
      */
     protected function readOutput(): string
     {

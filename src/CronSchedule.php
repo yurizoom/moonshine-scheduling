@@ -1,6 +1,6 @@
 <?php
 
-namespace MoonShine\Scheduling;
+namespace YuriZoom\MoonShineScheduling;
 
 /*
  * Plugin:        StreamlineFoundation

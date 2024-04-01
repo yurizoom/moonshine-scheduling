@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use MoonShine\Scheduling\Controllers\SchedulingController;
+use YuriZoom\MoonShineScheduling\Controllers\SchedulingController;
 
 Route::group([
     'prefix' => config('moonshine.route.prefix'),

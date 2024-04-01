@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MoonShine\Scheduling\Pages;
+namespace YuriZoom\MoonShineScheduling\Pages;
 
 use MoonShine\Attributes\Icon;
 use MoonShine\Pages\Page;
-use MoonShine\Scheduling\Components\SchedulingComponent;
+use YuriZoom\MoonShineScheduling\Components\SchedulingComponent;
 
 #[Icon('heroicons.outline.clock')]
 class SchedulingPage extends Page

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MoonShine\Scheduling;
+namespace YuriZoom\MoonShineScheduling;
 
 use Illuminate\Support\ServiceProvider;
-use MoonShine\Scheduling\Pages\SchedulingPage;
 use MoonShine\Menu\MenuItem;
 use MoonShine\MoonShine;
+use YuriZoom\MoonShineScheduling\Pages\SchedulingPage;
 
 class SchedulingServiceProvider extends ServiceProvider
 {

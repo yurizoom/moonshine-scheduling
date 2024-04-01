@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace MoonShine\Scheduling\Components;
+namespace YuriZoom\MoonShineScheduling\Components;
 
 use Exception;
 use MoonShine\Components\MoonShineComponent;
-use MoonShine\Scheduling\Scheduling;
+use YuriZoom\MoonShineScheduling\Scheduling;
 
 /**
  * @method static static make()
  */
 final class SchedulingComponent extends MoonShineComponent
 {
-    protected string $view = 'moonshine-scheduling::scheduling';
+    protected string $view = 'moonshine-scheduling::table';
 
     public function __construct()
     {

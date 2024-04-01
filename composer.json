@@ -1,7 +1,7 @@
 {
     "name": "yurizoom/moonshine-scheduling",
     "type": "library",
-    "description": "Task scheduling extension for moonshine",
+    "description": "Task scheduling extension for MoonShine",
     "keywords": ["moonshine", "task", "scheduling"],
     "license": "MIT",
     "authors": [
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MoonShine\\Scheduling\\": "src/"
+            "YuriZoom\\MoonShineScheduling\\": "src/"
         }
     },
     "conflict": {
@@ -26,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MoonShine\\Scheduling\\SchedulingServiceProvider"
+                "YuriZoom\\MoonShineScheduling\\SchedulingServiceProvider"
             ]
         }
     }
