@@ -13,7 +13,7 @@ class SchedulingPage extends Page
 {
     public function title(): string
     {
-        return __('Composer Viewer');
+        return __('Task scheduling');
     }
 
     public function breadcrumbs(): array

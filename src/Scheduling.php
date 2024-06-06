@@ -6,6 +6,8 @@ namespace YuriZoom\MoonShineScheduling;
 
 use Illuminate\Console\Scheduling\CallbackEvent;
 use Illuminate\Console\Scheduling\Event;
+use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Contracts\Console\Kernel as ConsoleKernelContract;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Support\Str;
 use Throwable;
@@ -24,9 +26,9 @@ class Scheduling
      */
     protected function getKernelEvents(): array
     {
-        app()->make('Illuminate\Contracts\Console\Kernel');
+        app()->make(ConsoleKernelContract::class)->bootstrap();
 
-        return app()->make('Illuminate\Console\Scheduling\Schedule')->events();
+        return app(Schedule::class)->events();
     }
 
     /**
