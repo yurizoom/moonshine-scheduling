@@ -26,7 +26,7 @@ class Scheduling
      */
     protected function getKernelEvents(): array
     {
-        app()->make(ConsoleKernelContract::class)->bootstrap();
+        app()->make(ConsoleKernelContract::class)->all();
 
         return app(Schedule::class)->events();
     }
