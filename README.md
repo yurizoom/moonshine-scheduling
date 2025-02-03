@@ -1,4 +1,4 @@
-Scheduling task manager for MoonShine
+Scheduling task manager for MoonShine 3
 ============================
 
 Веб-интерфейс для управления планировщиком задач в MoonShine.
@@ -15,7 +15,7 @@ $ composer require yurizoom/moonshine-scheduling
 
 ## Настройка
 
-В файле config/moonshine.php добавьте конфигурации.
+Если необходимо изменить настройки, добавьте в файле config/moonshine.php:
 
 ```php
 [
@@ -28,7 +28,7 @@ $ composer require yurizoom/moonshine-scheduling
 
 ### Добавление в меню
 
-Для того чтобы добавить меню в другое место, вставьте следующий код в app/Providers/MoonShineServiceProvider.php:
+Для того чтобы добавить меню в другое место, вставьте следующий код в app/MoonShine/Layouts/MoonShineLayout.php:
 ```php
 use YuriZoom\MoonShineScheduling\Pages\SchedulingPage;
 
@@ -38,11 +38,9 @@ protected function menu(): array
             ...
             
             MenuItem::make(
-                static fn () => __('Scheduling'),
-                new SchedulingPage(),
+                __('Scheduling'),
+                SchedulingPage::class,
             ),
-            
-            ...
         ];
     }
 ```

@@ -1,5 +1,5 @@
-<div xmlns:x-moonshine="http://www.w3.org/1999/html" x-data="data()">
-    <x-moonshine::box>
+<div xmlns:x-moonshine="http://www.w3.org/1999/html" x-data="data">
+    <x-moonshine::layout.box>
         <x-moonshine::table>
             <x-slot:thead>
                 <tr>
@@ -31,21 +31,23 @@
                 @endforeach
             </x-slot:tbody>
         </x-moonshine::table>
-    </x-moonshine::box>
-    <x-moonshine::divider xmlns:x-moonshine="http://www.w3.org/1999/html"/>
-    <x-moonshine::box xmlns:x-moonshine="http://www.w3.org/1999/html"
-                      title="{{ __('moonshine-scheduling::scheduling.output') }}"
-                      x-show="output">
-        <pre style="white-space:pre-wrap;background: #000000;color: #00fa4a;padding: 10px;border-radius: 0;" x-text="output"></pre>
-    </x-moonshine::box>
+    </x-moonshine::layout.box>
+    <x-moonshine::layout.divider xmlns:x-moonshine="http://www.w3.org/1999/html"/>
+    <x-moonshine::layout.box xmlns:x-moonshine="http://www.w3.org/1999/html"
+                             title="{{ __('moonshine-scheduling::scheduling.output') }}"
+                             x-show="output">
+        <pre style="white-space:pre-wrap;background: #000000;color: #00fa4a;padding: 10px;border-radius: 0;"
+             x-text="output"></pre>
+    </x-moonshine::layout.box>
 </div>
 
 <script>
-    function data() {
-        return {
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('data', () => ({
             output: '',
             showMessage: false,
             message: '',
+
             runEvent(id) {
                 fetch(`{{ route('moonshine.scheduling.run') }}`, {
                     method: "post",
@@ -62,10 +64,12 @@
                         this.$dispatch('toast', {type: data.status ? 'success' : 'error', text: data.message});
                     })
                     .catch(() => {
-                        this.$dispatch('toast', {type: 'error', text: {{ __('moonshine-scheduling::scheduling.failed') }}});
+                        this.$dispatch('toast', {
+                            type: 'error',
+                            text: {{ __('moonshine-scheduling::scheduling.failed') }}
+                        });
                     });
             }
-        }
-    }
-
+        }));
+    });
 </script>

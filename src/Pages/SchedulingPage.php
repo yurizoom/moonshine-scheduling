@@ -4,22 +4,20 @@ declare(strict_types=1);
 
 namespace YuriZoom\MoonShineScheduling\Pages;
 
-use MoonShine\Attributes\Icon;
-use MoonShine\Pages\Page;
+use MoonShine\Laravel\Pages\Page;
 use YuriZoom\MoonShineScheduling\Components\SchedulingComponent;
 
-#[Icon('heroicons.outline.clock')]
 class SchedulingPage extends Page
 {
-    public function title(): string
+    public function getTitle(): string
     {
         return __('Task scheduling');
     }
 
-    public function breadcrumbs(): array
+    public function getBreadcrumbs(): array
     {
         return [
-            '#' => $this->title(),
+            '#' => $this->getTitle(),
         ];
     }
 
