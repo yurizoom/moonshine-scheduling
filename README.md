@@ -1,18 +1,19 @@
-Scheduling task manager for MoonShine 3
+Scheduling task manager for MoonShine 4
 ============================
 
 Веб-интерфейс для управления планировщиком задач в MoonShine.
 
 ### Поддержка версий MoonShine
 
-| MoonShine   | Пакет       |
-|-------------|-------------|
-| 2.0+        | 1.0+        |
-| 3.0+        | 2.0+        |
+| MoonShine | Пакет |
+|-----------|-------|
+| 2.0+      | 1.0+  |
+| 3.0+      | 2.0+  |
+| 4.0+      | 3.0+  |
 
 ## Скриншот
 
-![wx20170809-165644](https://raw.githubusercontent.com/yurizoom/moonshine-scheduling/main/blob/screenshot.jpg)
+![screenshot](https://github.com/yurizoom/moonshine-scheduling/blob/main/blob/screenshot.jpg?raw=true)
 
 ## Установка
 
@@ -44,10 +45,7 @@ protected function menu(): array
         return [
             ...
             
-            MenuItem::make(
-                __('Scheduling'),
-                SchedulingPage::class,
-            ),
+            MenuItem::make(SchedulingPage::class),
         ];
     }
 ```

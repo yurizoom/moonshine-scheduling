@@ -26,10 +26,7 @@ class SchedulingServiceProvider extends ServiceProvider
 
         if (config('moonshine.scheduling.auto_menu')) {
             $menu->add([
-                MenuItem::make(
-                    __('Task scheduling'),
-                    SchedulingPage::class,
-                ),
+                MenuItem::make(SchedulingPage::class),
             ]);
         }
     }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace YuriZoom\MoonShineScheduling\Controllers;
 
 use MoonShine\Laravel\Http\Controllers\MoonShineController;
-use MoonShine\Laravel\MoonShineRequest;
+use MoonShine\Contracts\Core\DependencyInjection\CrudRequestContract as MoonShineRequest;
 use YuriZoom\MoonShineScheduling\Scheduling;
 
 class SchedulingController extends MoonShineController
